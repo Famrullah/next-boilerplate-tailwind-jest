@@ -1188,6 +1188,14 @@ axe-core@^4.3.5:
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.4.1.tgz"
   integrity sha512-gd1kmb21kwNuWr6BQz8fv6GNECPBnUasepcoLbekws23NVBLODdsClRZ+bQ8+9Uomf3Sm3+Vwn0oYG9NvwnJCw==
 
+axios@^0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.0.tgz#973ca980dee9077410189340390ea77964af6b29"
+  integrity sha512-XV/WrPxXfzgZ8j4lcB5i6LyaXmi90yetmV/Fem0kmglGx+mpY06CiweL3YxU6wOTNLmqLUePW4G8h45nGZ/+pA==
+  dependencies:
+    follow-redirects "^1.14.9"
+    form-data "^4.0.0"
+
 axobject-query@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/axobject-query/-/axobject-query-2.2.0.tgz"
@@ -1897,11 +1905,6 @@ eslint-plugin-react-hooks@^4.4.0:
   resolved "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.4.0.tgz"
   integrity sha512-U3RVIfdzJaeKDQKEJbz5p3NW8/L80PCATJAfuojwbaEL+gBjfGdhUcGde+WGUW46Q5sr/NgxevsIiDtNXrvZaQ==
 
-eslint-plugin-react-prefer-function-component@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-prefer-function-component/-/eslint-plugin-react-prefer-function-component-1.0.0.tgz#c1e04f40324758c07f1f8fa68400fcb575ba3356"
-  integrity sha512-qyYrkofEbc5s7QOHjt0uXY6DqMpZvU0yiVlI3E65DjN+m8PtttivQi+AkWT2TOLYAkOhglH9+YZ9saFuPjqeKw==
-
 eslint-plugin-react@^7.29.4:
   version "7.29.4"
   resolved "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-7.29.4.tgz"
@@ -2151,10 +2154,24 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.5.tgz"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
 
+follow-redirects@^1.14.9:
+  version "1.14.9"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.9.tgz#dd4ea157de7bfaf9ea9b3fbd85aa16951f78d8d7"
+  integrity sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==
+
 form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/form-data/-/form-data-3.0.1.tgz"
   integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
+  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
