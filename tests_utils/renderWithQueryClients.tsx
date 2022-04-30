@@ -10,7 +10,10 @@ const generateQueryClient = () => new QueryClient({
   },
 });
 
-export function renderWithQueryClient(ui: ReactElement, client?: QueryClient):RenderResult {
+export function renderWithQueryClient(
+  ui: ReactElement,
+  client?: QueryClient,
+):RenderResult {
   const queryClient = client ?? generateQueryClient();
   return render(
     <QueryClientProvider client={queryClient}>
