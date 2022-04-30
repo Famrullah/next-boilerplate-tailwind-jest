@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { renderWithQueryClient } from '../tests_utils/renderWithQueryClients';
 import App from '../pages/index';
 
 const createWrapper = () => {
@@ -21,7 +21,7 @@ const createWrapper = () => {
 describe('should render the app without crash', () => {
   const wrapper = createWrapper();
   it('renders the home page', () => {
-    render(wrapper);
+    renderWithQueryClient(wrapper);
     expect(wrapper).toBeTruthy();
   });
 });
