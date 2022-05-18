@@ -22,6 +22,7 @@
         "jest"
     ],
     "rules": {
+        "no-console": "warn",
         "indent": ["error", 2],
         "import/prefer-default-export": "off",
         "import/extensions": [

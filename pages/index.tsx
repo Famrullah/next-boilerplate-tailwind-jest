@@ -1,11 +1,11 @@
 import React from 'react';
-import HomeContainer from '../containers/home/homeContainer';
+import SideBar from '../components/sidebar';
 import { fetchPosts } from '../services/HomeApi';
 
 const HomePage = (props:any) => {
   const data = props as any;
   return (
-    <HomeContainer {...data} />
+    <SideBar {...data} />
   );
 };
 
