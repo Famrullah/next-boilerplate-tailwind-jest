@@ -48,4 +48,33 @@ export const sideNavData: ISidenav[] = [
       },
     ],
   },
+  {
+    text: 'Cuti',
+    link: '/#',
+    icon: AiTwotoneFileAdd,
+    children: [
+      {
+        text: 'a',
+        link: '/#',
+        icon: AiOutlineDashboard,
+        children: [
+          {
+            text: 'KPR',
+            link: '/#',
+            icon: AiOutlineDashboard,
+          },
+          {
+            text: 'KTA',
+            link: '/#',
+            icon: AiOutlineDashboard,
+          },
+        ],
+      },
+      {
+        text: 'b',
+        link: '/#',
+        icon: AiTwotoneFileAdd,
+      },
+    ],
+  },
 ];
