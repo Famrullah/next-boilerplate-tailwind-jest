@@ -22,6 +22,7 @@
         "jest"
     ],
     "rules": {
+        "no-return-assign": "off",
         "react/button-has-type": "off",
         "no-param-reassign": [2, { "props": false }],
         "no-console": "warn",

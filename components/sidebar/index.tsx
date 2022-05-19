@@ -16,14 +16,13 @@ const SideBar: React.FC = () => {
     if (target.classList.value !== '') {
       target.classList = '';
     } else {
-      target.classList = 'bg-green-400 text-white';
+      target.classList = 'bg-green-400 text-white block';
     }
   };
 
   const setShowDropDown = (page: string) => {
     setActivePage(page);
     setOpenLink((prevOpenLink) => ({
-      ...prevOpenLink,
       [page]: !prevOpenLink[page],
     }));
   };
@@ -38,15 +37,17 @@ const SideBar: React.FC = () => {
           {sideNavData.map((item, i:number) => (
             <li
               key={i}
-              // eslint-disable-next-line no-return-assign
               ref={(el): any => (parentLinkRef.current[i] = el)}
               id={i.toString()}
-              onClick={() => setShowDropDown(item.text)}
               aria-hidden="true"
               className="text-gray-600"
             >
               <Link href={item.link}>
-                <p className={`relative flex items-center p-2 text-base font-normal rounded-lg dark:text-white hover:bg-green-400 hover:text-white dark:hover:bg-gray-900 ${activePage === item.text ? 'bg-green-400 text-white' : ''}`} aria-hidden="true">
+                <p
+                  onClick={() => setShowDropDown(item.text)}
+                  className={`relative flex items-center p-2 text-base font-normal rounded-lg dark:text-white hover:bg-green-400 hover:text-white dark:hover:bg-gray-900 ${activePage === item.text ? 'bg-green-400 text-white' : ''}`}
+                  aria-hidden="true"
+                >
                   <item.icon className="active:text-white w-6 h-6 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
                   <span className="ml-3">{item.text}</span>
                   {(!isEmpty(item.children)) && (<AiOutlineArrowDown className="ml-5 absolute right-1" />)}
@@ -54,8 +55,7 @@ const SideBar: React.FC = () => {
               </Link>
               {(!isEmpty(item.children)) && (
                 item.children.map((list, index) => (openLink[item.text] ? (
-                  // eslint-disable-next-line no-return-assign
-                  <div ref={(el) => childrenLinkRef.current[index] = el}>
+                  <div ref={(el) => childrenLinkRef.current[index] = el} className="ml-5 p-2">
                     <button
                       key={index}
                       onClick={(val) => setActiveLink(val)}
