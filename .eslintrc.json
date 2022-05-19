@@ -22,6 +22,8 @@
         "jest"
     ],
     "rules": {
+        "react/button-has-type": "off",
+        "no-param-reassign": [2, { "props": false }],
         "no-console": "warn",
         "indent": ["error", 2],
         "import/prefer-default-export": "off",

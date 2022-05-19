@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineArrowDown } from 'react-icons/ai';
@@ -8,6 +8,16 @@ import { isEmpty } from '../../utils/isEmpty';
 
 const SideBar: React.FC = () => {
   const [activePage, setActivePage] = useState<string>('');
+  const myRefs = useRef([]);
+
+  const setActiveLink = ({ target }) => {
+    if (target.classList.value !== '') {
+      target.classList = '';
+    } else {
+      target.classList = 'bg-green-400 text-white';
+    }
+  };
+
   return (
     <aside className="w-64" aria-label="Sidebar">
       <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800 h-screen">
@@ -27,6 +37,18 @@ const SideBar: React.FC = () => {
             </li>
           ))}
         </ul>
+        {
+          [1, 2, 3].map((v, i) => (
+            <button
+              id={i.toString()}
+              // eslint-disable-next-line no-return-assign
+              ref={(el) => (myRefs.current[i] = el)}
+              onClick={(val) => setActiveLink(val)}
+            >
+              {`Button${i}`}
+            </button>
+          ))
+        }
       </div>
     </aside>
   );
