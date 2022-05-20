@@ -1,4 +1,6 @@
-import { AiOutlineDashboard, AiTwotoneFileAdd } from 'react-icons/ai';
+import {
+  AiOutlineDashboard, AiTwotoneFileAdd, AiOutlineCreditCard, AiFillBank,
+} from 'react-icons/ai';
 
 interface IChildren {
   text: string,
@@ -27,24 +29,12 @@ export const sideNavData: ISidenav[] = [
       {
         text: 'Pinjaman',
         link: '/#',
-        icon: AiOutlineDashboard,
-        children: [
-          {
-            text: 'KPR',
-            link: '/#',
-            icon: AiOutlineDashboard,
-          },
-          {
-            text: 'KTA',
-            link: '/#',
-            icon: AiOutlineDashboard,
-          },
-        ],
+        icon: AiFillBank,
       },
       {
         text: 'Pembukaan Rekening',
         link: '/#',
-        icon: AiTwotoneFileAdd,
+        icon: AiOutlineCreditCard,
       },
     ],
   },
@@ -54,24 +44,17 @@ export const sideNavData: ISidenav[] = [
     icon: AiTwotoneFileAdd,
     children: [
       {
-        text: 'a',
+        text: 'Melahirkan',
         link: '/#',
         icon: AiOutlineDashboard,
-        children: [
-          {
-            text: 'KPR',
-            link: '/#',
-            icon: AiOutlineDashboard,
-          },
-          {
-            text: 'KTA',
-            link: '/#',
-            icon: AiOutlineDashboard,
-          },
-        ],
       },
       {
-        text: 'b',
+        text: 'Tahunan',
+        link: '/#',
+        icon: AiTwotoneFileAdd,
+      },
+      {
+        text: 'Sakit',
         link: '/#',
         icon: AiTwotoneFileAdd,
       },

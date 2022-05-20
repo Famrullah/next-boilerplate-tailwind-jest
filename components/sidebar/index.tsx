@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AiOutlineArrowDown } from 'react-icons/ai';
@@ -7,17 +7,12 @@ import { sideNavData } from './parts/utils/sideNavData';
 import { isEmpty } from '../../utils/isEmpty';
 
 const SideBar: React.FC = () => {
-  const [activePage, setActivePage] = useState<string>('');
+  const [activePage, setActivePage] = useState<string>('Beranda');
   const [openLink, setOpenLink] = useState<any>({});
-  const parentLinkRef = useRef([]);
-  const childrenLinkRef = useRef([]);
+  const [activeLink, setActiveLink] = useState<any>({});
 
-  const setActiveLink = ({ target }) : void => {
-    if (target.classList.value !== '') {
-      target.classList = '';
-    } else {
-      target.classList = 'bg-green-400 text-white block';
-    }
+  const setActiveLinks = (id:any) : void => {
+    setActiveLink(id);
   };
 
   const setShowDropDown = (page: string) => {
@@ -37,7 +32,6 @@ const SideBar: React.FC = () => {
           {sideNavData.map((item, i:number) => (
             <li
               key={i}
-              ref={(el): any => (parentLinkRef.current[i] = el)}
               id={i.toString()}
               aria-hidden="true"
               className="text-gray-600"
@@ -55,12 +49,14 @@ const SideBar: React.FC = () => {
               </Link>
               {(!isEmpty(item.children)) && (
                 item.children.map((list, index) => (openLink[item.text] ? (
-                  <div ref={(el) => childrenLinkRef.current[index] = el} className="ml-5 p-2">
+                  <div className="ml-2 p-2">
                     <button
+                      className={`${activeLink === `${list.text}-${index}` ? 'bg-gray-200 text-gray-900' : ''} w-full text-left p-2 rounded flex items-center`}
                       key={index}
-                      onClick={(val) => setActiveLink(val)}
+                      onClick={() => setActiveLinks(`${list.text}-${index}`)}
                     >
-                      {list.text}
+                      <list.icon className="active:text-white w-6 h-6 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white mr-2" />
+                      <span>{list.text}</span>
                     </button>
                   </div>
                 ) : null))
