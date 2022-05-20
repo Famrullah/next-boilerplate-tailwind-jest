@@ -2,29 +2,12 @@
 import React, { useState } from 'react';
 import {
   AiOutlineDashboard,
-  AiOutlineArrowDown,
 } from 'react-icons/ai';
-import Link from 'next/link';
-import { isEmpty } from '../../utils/isEmpty';
 import { Menus } from './parts/utils/sideNavData';
+import MenusComponent from './parts/menu';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
-  const [openLink, setOpenLink] = useState<any>({});
-  const [activeLink, setActiveLink] = useState<any>({});
-  const [activePage, setActivePage] = useState<string>('Beranda');
-
-  const setShowDropDown = (title: string) => {
-    setActivePage(title);
-    setOpenLink((prevOpenLink) => ({
-      [title]: !prevOpenLink[title],
-    }));
-    setActiveLink({});
-  };
-
-  const setActiveLinks = (id:any) : void => {
-    setActiveLink(id);
-  };
 
   return (
     <div
@@ -53,39 +36,7 @@ const Sidebar = () => {
         </h1>
       </div>
       <ul className="pt-6">
-        {Menus.map((item, index) => (
-          <div key={index}>
-            <Link href={item.link}>
-              <li
-                aria-hidden
-                onClick={() => setShowDropDown(item.title)}
-                key={index}
-                className={`flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-                ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-light-white' : ''}`}
-              >
-                <item.icon />
-                <span className={`${!open && 'hidden'} origin-left duration-200`}>
-                  {item.title}
-                </span>
-                {(!isEmpty(item.children) && open) && (<AiOutlineArrowDown className="ml-5 absolute right-6" />)}
-              </li>
-            </Link>
-            {(!isEmpty(item.children) && openLink[item.title]) && (item.children.map((link, i) => (
-              <div
-                key={i}
-                aria-hidden
-                onClick={() => setActiveLinks(`${link.title}-${index}`)}
-                className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''} ml-2 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-                `}
-              >
-                <item.icon />
-                <span className={`${!open && 'hidden'} origin-left duration-200`}>
-                  {link.title}
-                </span>
-              </div>
-            )))}
-          </div>
-        ))}
+        <MenusComponent menu={Menus} open />
       </ul>
     </div>
   );
