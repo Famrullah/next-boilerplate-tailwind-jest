@@ -54,36 +54,37 @@ const Sidebar = () => {
       </div>
       <ul className="pt-6">
         {Menus.map((item, index) => (
-          <Link href={item.link} key={index}>
-            <li
-              aria-hidden
-              onClick={() => setShowDropDown(item.title)}
-              className={`flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+          <div key={index}>
+            <Link href={item.link}>
+              <li
+                aria-hidden
+                onClick={() => setShowDropDown(item.title)}
+                key={index}
+                className={`flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
                 ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-light-white' : ''}`}
-            >
-              <item.icon />
-              <span className={`${!open && 'hidden'} origin-left duration-200`}>
-                {item.title}
-              </span>
-              {(!isEmpty(item.children) && open) && (<AiOutlineArrowDown className="ml-5 absolute right-6" />)}
-              {(!isEmpty(item.children)
-               && openLink[item.title])
-               && (item.children.map((link, i) => (
-                 <div
-                   key={i}
-                   aria-hidden
-                   onClick={() => setActiveLinks(`${link.title}-${i}`)}
-                   className={`${activeLink === `${link.title}-${i}` ? 'bg-light-white' : ''} ml-2 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+              >
+                <item.icon />
+                <span className={`${!open && 'hidden'} origin-left duration-200`}>
+                  {item.title}
+                </span>
+                {(!isEmpty(item.children) && open) && (<AiOutlineArrowDown className="ml-5 absolute right-6" />)}
+              </li>
+            </Link>
+            {(!isEmpty(item.children) && openLink[item.title]) && (item.children.map((link, i) => (
+              <div
+                key={i}
+                aria-hidden
+                onClick={() => setActiveLinks(`${link.title}-${index}`)}
+                className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''} ml-2 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
                 `}
-                 >
-                   <item.icon />
-                   <span className={`${!open && 'hidden'} origin-left duration-200`}>
-                     {link.title}
-                   </span>
-                 </div>
-               )))}
-            </li>
-          </Link>
+              >
+                <item.icon />
+                <span className={`${!open && 'hidden'} origin-left duration-200`}>
+                  {link.title}
+                </span>
+              </div>
+            )))}
+          </div>
         ))}
       </ul>
     </div>
