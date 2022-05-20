@@ -8,7 +8,6 @@ import MenusComponent from './parts/menu';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
-
   return (
     <div
       className={` ${
@@ -36,7 +35,7 @@ const Sidebar = () => {
         </h1>
       </div>
       <ul className="pt-6">
-        <MenusComponent menu={Menus} open />
+        <MenusComponent menu={Menus} open={open} />
       </ul>
     </div>
   );
