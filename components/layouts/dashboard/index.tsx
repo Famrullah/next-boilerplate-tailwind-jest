@@ -8,7 +8,7 @@ const Layout = ({ children }: any) => (
       <div className="relative">
         <div className="fixed shadow-md w-full p-5">navbaar</div>
       </div>
-      <div className="p-7 mt-20">{children}</div>
+      <div className="p-5 mt-20">{children}</div>
     </div>
   </div>
 );

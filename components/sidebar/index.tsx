@@ -19,6 +19,7 @@ const Sidebar = () => {
     setOpenLink((prevOpenLink) => ({
       [title]: !prevOpenLink[title],
     }));
+    setActiveLink({});
   };
 
   const setActiveLinks = (id:any) : void => {
