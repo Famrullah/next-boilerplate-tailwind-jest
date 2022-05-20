@@ -2,6 +2,7 @@ import React from 'react';
 import type { AppProps } from 'next/app';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import Layout from '../components/layouts/dashboard';
 import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -10,7 +11,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Components {...pageProps} />
+        <Layout>
+          <Components {...pageProps} />
+        </Layout>
       </Hydrate>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

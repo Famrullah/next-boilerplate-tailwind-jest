@@ -3,61 +3,47 @@ import {
 } from 'react-icons/ai';
 
 interface IChildren {
-  text: string,
+  title: string,
   link: string,
   icon: any,
+  gap?: boolean,
   children?: any[]
 }
 interface ISidenav {
-  text: string,
+  title: string,
   link: string,
   icon: any,
-  children?: IChildren[]
+  children?: IChildren[],
+  gap?: boolean
 }
 
-export const sideNavData: ISidenav[] = [
+export const Menus: ISidenav[] = [
+  { title: 'Beranda', icon: AiOutlineDashboard, link: '/home' },
   {
-    text: 'Beranda',
-    link: '/#',
-    icon: AiOutlineDashboard,
-  },
-  {
-    text: 'Pengajuan',
-    link: '/#',
+    title: 'Inbox',
     icon: AiTwotoneFileAdd,
+    link: '/#',
     children: [
       {
-        text: 'Pinjaman',
+        title: 'Pinjaman',
         link: '/#',
         icon: AiFillBank,
       },
       {
-        text: 'Pembukaan Rekening',
+        title: 'Pembukaan Rekening',
         link: '/#',
         icon: AiOutlineCreditCard,
       },
     ],
   },
   {
-    text: 'Cuti',
-    link: '/#',
-    icon: AiTwotoneFileAdd,
-    children: [
-      {
-        text: 'Melahirkan',
-        link: '/#',
-        icon: AiOutlineDashboard,
-      },
-      {
-        text: 'Tahunan',
-        link: '/#',
-        icon: AiTwotoneFileAdd,
-      },
-      {
-        text: 'Sakit',
-        link: '/#',
-        icon: AiTwotoneFileAdd,
-      },
-    ],
+    title: 'Accounts', icon: AiOutlineCreditCard, link: '/#', gap: true,
   },
+  { title: 'Schedule ', icon: AiFillBank, link: '/#' },
+  { title: 'Search', icon: AiTwotoneFileAdd, link: '/#' },
+  { title: 'Analytics', icon: AiTwotoneFileAdd, link: '/#' },
+  {
+    title: 'Files ', icon: AiOutlineCreditCard, link: '/#', gap: true,
+  },
+  { title: 'Setting', icon: AiFillBank, link: '/#' },
 ];

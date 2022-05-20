@@ -1,13 +1,11 @@
 import React from 'react';
-import SideBar from '../components/sidebar';
 import { fetchPosts } from '../services/HomeApi';
 
-const HomePage = (props:any) => {
-  const data = props as any;
-  return (
-    <SideBar {...data} />
-  );
-};
+const HomePage = () => (
+  <div className="flex">
+    <div className="w-full bg-gray-700">ll</div>
+  </div>
+);
 
 export async function getServerSideProps() {
   const req = await fetchPosts();
