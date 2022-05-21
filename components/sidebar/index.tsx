@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
   AiOutlineDashboard,
 } from 'react-icons/ai';
-import { Menus } from './parts/utils/sideNavData';
+import { Menus } from '../../utils/constants/menu';
 import MenusComponent from './parts/menu';
 
 const Sidebar = () => {
@@ -31,7 +31,7 @@ const Sidebar = () => {
             !open && 'scale-0'
           }`}
         >
-          bleee
+          Bleee
         </h1>
       </div>
       <ul className="pt-6">

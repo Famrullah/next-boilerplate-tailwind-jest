@@ -2,23 +2,24 @@ import {
   AiOutlineDashboard, AiTwotoneFileAdd, AiOutlineCreditCard, AiFillBank,
 } from 'react-icons/ai';
 
-interface IChildren {
-  title: string,
-  link: string,
-  icon: any,
-  gap?: boolean,
-  children?: any[]
-}
-interface ISidenav {
-  title: string,
-  link: string,
-  icon: any,
-  children?: IChildren[],
-  gap?: boolean
-}
+  interface IChildren {
+    title: string,
+    link: string,
+    icon: any,
+    gap?: boolean,
+    children?: any[]
+  }
+
+  interface ISidenav {
+    title: string,
+    link: string,
+    icon: any,
+    children?: IChildren[],
+    gap?: boolean
+  }
 
 export const Menus: ISidenav[] = [
-  { title: 'Beranda', icon: AiOutlineDashboard, link: '/dashboard' },
+  { title: 'Dashboard', icon: AiOutlineDashboard, link: '/dashboard' },
   {
     title: 'Inbox',
     icon: AiTwotoneFileAdd,
