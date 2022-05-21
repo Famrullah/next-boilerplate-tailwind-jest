@@ -22,28 +22,28 @@ export const Menus: ISidenav[] = [
   {
     title: 'Inbox',
     icon: AiTwotoneFileAdd,
-    link: '/#',
+    link: '',
     children: [
       {
         title: 'Pinjaman',
-        link: '/#',
+        link: '',
         icon: AiFillBank,
       },
       {
         title: 'Pembukaan Rekening',
-        link: '/#',
+        link: '',
         icon: AiOutlineCreditCard,
       },
     ],
   },
   {
-    title: 'Accounts', icon: AiOutlineCreditCard, link: '/#', gap: true,
+    title: 'Accounts', icon: AiOutlineCreditCard, link: '', gap: true,
   },
-  { title: 'Schedule ', icon: AiFillBank, link: '/#' },
-  { title: 'Search', icon: AiTwotoneFileAdd, link: '/#' },
-  { title: 'Analytics', icon: AiTwotoneFileAdd, link: '/#' },
+  { title: 'Schedule ', icon: AiFillBank, link: '' },
+  { title: 'Search', icon: AiTwotoneFileAdd, link: '' },
+  { title: 'Analytics', icon: AiTwotoneFileAdd, link: '' },
   {
-    title: 'Files ', icon: AiOutlineCreditCard, link: '/#', gap: true,
+    title: 'Files ', icon: AiOutlineCreditCard, link: '', gap: true,
   },
-  { title: 'Setting', icon: AiFillBank, link: '/#' },
+  { title: 'Setting', icon: AiFillBank, link: '' },
 ];

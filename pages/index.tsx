@@ -1,9 +1,10 @@
 import React from 'react';
 import { fetchPosts } from '../services/HomeApi';
+import { getLayout } from '../components/layouts/blog';
 
-const HomePage = () => (
+const Dashboard = () => (
   <div className="flex">
-    <div className="w-full bg-gray-700">ll</div>
+    <div className="w-full">ljdkjjfl</div>
   </div>
 );
 
@@ -16,4 +17,5 @@ export async function getServerSideProps() {
   };
 }
 
-export default HomePage;
+Dashboard.getLayout = getLayout;
+export default Dashboard;

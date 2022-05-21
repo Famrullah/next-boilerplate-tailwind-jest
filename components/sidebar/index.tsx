@@ -12,7 +12,7 @@ const Sidebar = () => {
     <div
       className={` ${
         open ? 'w-60' : 'w-20 '
-      } bg-green-800 h-screen p-5  pt-8 relative duration-300`}
+      } bg-teal-500 h-screen p-5  pt-8 relative duration-300`}
     >
       <AiOutlineDashboard
         className={`mt-7 absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
