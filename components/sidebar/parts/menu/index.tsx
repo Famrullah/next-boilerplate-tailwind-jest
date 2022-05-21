@@ -37,8 +37,8 @@ const Menus: React.FC<IProps> = ({ menu, open }) => {
               className={`flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
                 ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-light-white' : ''}`}
             >
-              <item.icon className="text-xl" />
-              <span className={`${!open && 'hidden'} origin-left duration-200 capitalize`}>
+              <item.icon className={`${!open && 'text-2xl'} text-lg origin-left duration-200 capitalize font-thin`} />
+              <span className={`${!open && 'hidden'} origin-left duration-200 capitalize font-thin`}>
                 {item.title}
               </span>
               {(!isEmpty(item.children) && open) && (<AiOutlineArrowDown className="ml-5 absolute right-6" />)}
@@ -50,11 +50,11 @@ const Menus: React.FC<IProps> = ({ menu, open }) => {
                 key={i}
                 aria-hidden
                 onClick={() => setActiveLinks(`${link.title}-${index}`)}
-                className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''}  ml-2 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
+                className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''}  ml-3 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
                 `}
               >
-                <item.icon className="text-xl" />
-                <span className={`${!open && 'hidden'} origin-left duration-200 capitalize`}>
+                <item.icon className="text-lg" />
+                <span className={`${!open && 'hidden'} origin-left duration-200 capitalize font-thin`}>
                   {link.title}
                 </span>
               </li>

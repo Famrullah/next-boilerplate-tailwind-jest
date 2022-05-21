@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div
       className={` ${
         isOpen ? 'w-60' : 'w-20 '
-      } bg-teal-500 h-screen p-5  pt-8 relative duration-300`}
+      } bg-teal-700 h-screen p-5  pt-8 relative duration-300`}
     >
 
       <div className="flex gap-x-4 items-center">
@@ -23,7 +23,7 @@ const Sidebar = () => {
           }`}
         />
         <h1
-          className={`text-white origin-left font-medium text-xl duration-200 ${
+          className={`text-white origin-left font-bold text-xl duration-200 ${
             !isOpen && 'scale-0'
           }`}
         >
