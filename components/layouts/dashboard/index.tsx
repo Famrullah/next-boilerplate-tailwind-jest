@@ -13,6 +13,7 @@ const AppLayout = ({ children }: any) => {
         <div className="relative">
           <div className="fixed shadow-md w-full p-5 top">
             <div
+              className="cursor-pointer"
               aria-hidden
               onClick={() => setIsOpen()}
             >
