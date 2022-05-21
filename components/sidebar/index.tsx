@@ -18,8 +18,8 @@ const Sidebar = () => {
         <Image
           src="/vercel.svg"
           alt="my image"
-          width={150}
-          height={80}
+          width={120}
+          height={50}
           className={`object-contain cursor-pointer duration-500 ${
             isOpen && 'rotate-[360deg] text-xl text-white'
           }`}
