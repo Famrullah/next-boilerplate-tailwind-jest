@@ -19,7 +19,7 @@ const Sidebar = () => {
       <div className="flex gap-x-4 items-center">
         <AiOutlineDashboard
           className={`cursor-pointer duration-500 ${
-            isOpen && 'rotate-[360deg]'
+            isOpen && 'rotate-[360deg] text-xl text-white'
           }`}
         />
         <h1

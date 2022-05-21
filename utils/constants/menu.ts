@@ -19,20 +19,20 @@ import {
   }
 
 export const Menus: ISidenav[] = [
-  { title: 'Dashboard', icon: AiOutlineDashboard, link: '/dashboard' },
+  { title: 'dashboard', icon: AiOutlineDashboard, link: '/dashboard' },
   {
-    title: 'Inbox',
+    title: 'pengajuan',
     icon: AiTwotoneFileAdd,
-    link: '',
+    link: '#',
     children: [
       {
-        title: 'Pinjaman',
-        link: '',
+        title: 'pinjaman',
+        link: '/pinjaman',
         icon: AiFillBank,
       },
       {
         title: 'Pembukaan Rekening',
-        link: '',
+        link: '/#',
         icon: AiOutlineCreditCard,
       },
     ],

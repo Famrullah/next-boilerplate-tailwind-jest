@@ -37,26 +37,28 @@ const Menus: React.FC<IProps> = ({ menu, open }) => {
               className={`flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
                 ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-light-white' : ''}`}
             >
-              <item.icon />
-              <span className={`${!open && 'hidden'} origin-left duration-200`}>
+              <item.icon className="text-xl" />
+              <span className={`${!open && 'hidden'} origin-left duration-200 capitalize`}>
                 {item.title}
               </span>
               {(!isEmpty(item.children) && open) && (<AiOutlineArrowDown className="ml-5 absolute right-6" />)}
             </li>
           </Link>
           {(!isEmpty(item.children) && openLink[item.title]) && (item.children.map((link, i) => (
-            <div
-              key={i}
-              aria-hidden
-              onClick={() => setActiveLinks(`${link.title}-${index}`)}
-              className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''}  ml-2 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
+            <Link href={link.link}>
+              <li
+                key={i}
+                aria-hidden
+                onClick={() => setActiveLinks(`${link.title}-${index}`)}
+                className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''}  ml-2 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
                 `}
-            >
-              <item.icon />
-              <span className={`${!open && 'hidden'} origin-left duration-200`}>
-                {link.title}
-              </span>
-            </div>
+              >
+                <item.icon className="text-xl" />
+                <span className={`${!open && 'hidden'} origin-left duration-200 capitalize`}>
+                  {link.title}
+                </span>
+              </li>
+            </Link>
           )))}
         </div>
       ))}
