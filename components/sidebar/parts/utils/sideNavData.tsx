@@ -18,7 +18,7 @@ interface ISidenav {
 }
 
 export const Menus: ISidenav[] = [
-  { title: 'Beranda', icon: AiOutlineDashboard, link: '/home' },
+  { title: 'Beranda', icon: AiOutlineDashboard, link: '/dashboard' },
   {
     title: 'Inbox',
     icon: AiTwotoneFileAdd,
