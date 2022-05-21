@@ -16,7 +16,7 @@ const AppLayout = ({ children }: any) => {
               aria-hidden
               onClick={() => setIsOpen()}
             >
-              {!isOpen ? <AiOutlineMenu /> : <AiOutlineClose />}
+              {!isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
             </div>
           </div>
         </div>

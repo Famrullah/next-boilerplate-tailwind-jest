@@ -5,7 +5,7 @@ export interface INavbar {
 }
 
 const createFishSlice = (set: SetState<INavbar>, get: GetState<INavbar>) => ({
-  initialState: false,
+  initialState: true,
   setIsOpen: () => {
     set((prev) => ({ initialState: !prev.initialState }));
   },
