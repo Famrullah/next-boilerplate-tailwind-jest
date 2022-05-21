@@ -34,10 +34,10 @@ const Menus: React.FC<IProps> = ({ menu, open }) => {
               aria-hidden
               onClick={() => setShowDropDown(item.title)}
               key={index}
-              className={`flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
-                ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-light-white' : ''}`}
+              className={`flex block rounded-md p-2 cursor-pointer hover:bg-neutral-600 hover:text-white text-sm items-center gap-x-4 
+                ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-neutral-600 text-white' : ''}`}
             >
-              <item.icon className={`${!open && 'text-2xl'} text-lg origin-left duration-200 capitalize font-thin`} />
+              <item.icon className={`${!open && 'text-2xl'} text-lg  origin-left duration-200 capitalize font-thin`} />
               <span className={`${!open && 'hidden'} origin-left duration-200 capitalize font-thin`}>
                 {item.title}
               </span>
@@ -50,7 +50,7 @@ const Menus: React.FC<IProps> = ({ menu, open }) => {
                 key={i}
                 aria-hidden
                 onClick={() => setActiveLinks(`${link.title}-${index}`)}
-                className={`${activeLink === `${link.title}-${index}` ? 'bg-light-white' : ''}  ml-3 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-light-white text-white text-sm items-center gap-x-4 
+                className={`${activeLink === `${link.title}-${index}` ? 'bg-neutral-600 text-white' : ''}  ml-3 my-2 flex block rounded-md p-2 cursor-pointer hover:bg-neutral-600 hover:text-white text-sm items-center gap-x-4 
                 `}
               >
                 <item.icon className="text-lg" />
