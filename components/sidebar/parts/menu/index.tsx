@@ -12,7 +12,7 @@ interface IProps {
 const Menus: React.FC<IProps> = ({ menu, open }) => {
   const [openLink, setOpenLink] = useState<any>({});
   const [activeLink, setActiveLink] = useState<any>({});
-  const [activePage, setActivePage] = useState<string>('Beranda');
+  const [activePage, setActivePage] = useState<string>('dashboard');
 
   const setShowDropDown = (title: string) => {
     setActivePage(title);

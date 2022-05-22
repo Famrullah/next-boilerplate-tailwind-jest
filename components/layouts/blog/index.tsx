@@ -2,7 +2,6 @@ import React from 'react';
 
 const DefaultLayout = ({ children }:any) => (
   <div>
-    navbar
     {children}
   </div>
 );
