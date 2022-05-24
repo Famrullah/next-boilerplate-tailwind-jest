@@ -37,7 +37,7 @@ const Menus: React.FC<IProps> = ({ menu, open }) => {
               className={`flex block rounded-md p-2 cursor-pointer hover:bg-neutral-400 hover:text-white text-sm items-center gap-x-4 
                 ${item.gap ? 'mt-9' : 'mt-2'} ${activePage === item.title ? 'bg-neutral-400 text-white' : ''}`}
             >
-              <item.icon className={`${!open && 'text-2xl'} text-lg  origin-left duration-200 capitalize font-thin`} />
+              <item.icon className={`${!open && 'text-2xl m-auto'} text-lg  origin-left duration-200 capitalize font-thin`} />
               <span className={`${!open && 'hidden'} origin-left duration-200 capitalize font-thin`}>
                 {item.title}
               </span>

@@ -40,7 +40,23 @@ export const Menus: ISidenav[] = [
   {
     title: 'Accounts', icon: AiOutlineCreditCard, link: '', gap: true,
   },
-  { title: 'Schedule ', icon: AiFillBank, link: '' },
+  {
+    title: 'Schedule ',
+    icon: AiFillBank,
+    link: '',
+    children: [
+      {
+        title: 'pinjaman',
+        link: '/pinjaman',
+        icon: AiFillBank,
+      },
+      {
+        title: 'Pembukaan Rekening',
+        link: '/#',
+        icon: AiOutlineCreditCard,
+      },
+    ],
+  },
   { title: 'Search', icon: AiTwotoneFileAdd, link: '' },
   { title: 'Analytics', icon: AiTwotoneFileAdd, link: '' },
   {
