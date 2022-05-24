@@ -8,13 +8,17 @@ module.exports = {
       colors: {
         'dark-purple': '#081A51',
         'light-white': 'rgba(255,255,255,0.17)',
+        mineshaft30: '#989898',
       },
     },
   },
   plugins: [],
   variants: {
     extend: {
-      backgroundColor: ['active'],
+      backgroundColor: ['active', 'disabled'],
+      colors: {
+        mineshaft30: '#989898',
+      },
     },
   },
 };
