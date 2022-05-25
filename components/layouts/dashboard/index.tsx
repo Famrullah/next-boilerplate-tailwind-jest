@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai';
 import Sidebar from '../../sidebar';
 import useStore from '../../../store/useStore';
 
@@ -18,7 +18,7 @@ const AppLayout = ({ children }: any) => {
               aria-hidden
               onClick={() => setIsOpen()}
             >
-              {!isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+              {!isOpen ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
             </div>
             <div className="basis-1/3 absolute right-5 top-3 cursor-pointer">
               <div className="relative inline-block">
