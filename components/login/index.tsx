@@ -1,5 +1,5 @@
 import React from 'react';
-import { LockClosedIcon } from '@heroicons/react/solid';
+import { LockClosedIcon, LockOpenIcon } from '@heroicons/react/solid';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
@@ -94,10 +94,11 @@ const LoginPage:React.FC = () => {
             <button
               disabled={!isValid}
               type="submit"
-              className="disabled:bg-mineshaft30 disabled:cursor-not-allowed disabled:text-white group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-stone-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500"
+              className="disabled:bg-mineshaft30 disabled:cursor-not-allowed disabled:text-white bg-green-400 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white duration-500 text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                <LockClosedIcon className="h-5 w-5 text-stone-500" aria-hidden="true" />
+                {isValid ? <LockOpenIcon className="h-5 w-5 text-white duration-1000" aria-hidden="true" />
+                  : <LockClosedIcon className="h-5 w-5 text-white duration-1000" aria-hidden="true" />}
               </span>
               Sign in
             </button>
