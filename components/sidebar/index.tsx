@@ -15,15 +15,17 @@ const Sidebar = () => {
     >
 
       <div className="flex gap-x-4 items-center">
-        <Image
-          src="/vercel.svg"
-          alt="my image"
-          width={120}
-          height={50}
-          className={`object-contain cursor-pointer duration-500 ${
-            isOpen && 'rotate-[360deg] text-xl text-white'
-          }`}
-        />
+        <div className="m-auto">
+          <Image
+            src="/vercel.svg"
+            alt="my image"
+            width={150}
+            height={50}
+            className={`object-contain cursor-pointer duration-500 ${
+              isOpen && 'rotate-[360deg] text-xl text-white'
+            }`}
+          />
+        </div>
       </div>
       <ul className="pt-6">
         <MenusComponent menu={Menus} open={isOpen} />

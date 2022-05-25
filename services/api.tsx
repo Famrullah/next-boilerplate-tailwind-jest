@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: process.env.API_HOST,
   headers: {
     'Content-type': 'application/json',
   },
