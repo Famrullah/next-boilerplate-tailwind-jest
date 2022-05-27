@@ -8,11 +8,11 @@ const AppLayout = ({ children }: any) => {
   const setIsOpen = useStore((state) => state.setIsOpen);
   const isOpen = useStore((state) => state.getData());
   return (
-    <div className="flex">
+    <div className="flex h-screen overflow-hidden">
       <Sidebar />
-      <div className="h-screen flex-1">
+      <div className="relative flex flex-col z-50 flex-1 overflow-y-auto overflow-x-hidden">
         <div className="relative">
-          <div className="fixed shadow-md w-full py-5 px-5 top relative flex flex flex-row">
+          <div className="sticky top-0 bottom-0 left-0 right-0 shadow-md w-full py-5 px-5 top  flex flex-row">
             <div
               className="cursor-pointer"
               aria-hidden
@@ -28,7 +28,7 @@ const AppLayout = ({ children }: any) => {
             </div>
           </div>
         </div>
-        <div className="p-5">{children}</div>
+        <div className="p-5 overflow-auto h-screen relative -z-20">{children}</div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import {
-  AiOutlineDashboard, AiTwotoneFileAdd, AiOutlineCreditCard, AiFillBank,
+  AiTwotoneFileAdd, AiOutlineCreditCard, AiFillBank,
 } from 'react-icons/ai';
+import { HomeIcon } from '@heroicons/react/solid';
 
   interface IChildren {
     title: string,
@@ -19,7 +20,7 @@ import {
   }
 
 export const Menus: ISidenav[] = [
-  { title: 'dashboard', icon: AiOutlineDashboard, link: '/dashboard' },
+  { title: 'dashboard', icon: HomeIcon, link: '/dashboard' },
   {
     title: 'pengajuan',
     icon: AiTwotoneFileAdd,
@@ -57,6 +58,75 @@ export const Menus: ISidenav[] = [
       },
     ],
   },
+  {
+    title: 'Schedule ',
+    icon: AiFillBank,
+    link: '',
+    children: [
+      {
+        title: 'pinjaman',
+        link: '/pinjaman',
+        icon: AiFillBank,
+      },
+      {
+        title: 'Pembukaan Rekening',
+        link: '/#',
+        icon: AiOutlineCreditCard,
+      },
+    ],
+  },
+  {
+    title: 'Schedule ',
+    icon: AiFillBank,
+    link: '',
+    children: [
+      {
+        title: 'pinjaman',
+        link: '/pinjaman',
+        icon: AiFillBank,
+      },
+      {
+        title: 'Pembukaan Rekening',
+        link: '/#',
+        icon: AiOutlineCreditCard,
+      },
+    ],
+  },
+  {
+    title: 'Schedule ',
+    icon: AiFillBank,
+    link: '',
+    children: [
+      {
+        title: 'pinjaman',
+        link: '/pinjaman',
+        icon: AiFillBank,
+      },
+      {
+        title: 'Pembukaan Rekening',
+        link: '/#',
+        icon: AiOutlineCreditCard,
+      },
+    ],
+  },
+  {
+    title: 'Schedule ',
+    icon: AiFillBank,
+    link: '',
+    children: [
+      {
+        title: 'pinjaman',
+        link: '/pinjaman',
+        icon: AiFillBank,
+      },
+      {
+        title: 'Pembukaan Rekening',
+        link: '/#',
+        icon: AiOutlineCreditCard,
+      },
+    ],
+  },
+
   { title: 'Search', icon: AiTwotoneFileAdd, link: '' },
   { title: 'Analytics', icon: AiTwotoneFileAdd, link: '' },
   {
