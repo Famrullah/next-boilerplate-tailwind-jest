@@ -17,6 +17,11 @@ export const PieChart = () => {
         fontFamily: 'sans-serif',
       },
     },
+    accessibility: {
+      point: {
+        valueDescriptionFormat: '{index}. {point.name}, {point.y}.',
+      },
+    },
     colors: ['#f65314', '#ffec4a', '#1EBBEE', '#006cff', '#66EDA8', '#b20317', '#666'],
     title: {
       text: 'Browser market shares. January, 2018',

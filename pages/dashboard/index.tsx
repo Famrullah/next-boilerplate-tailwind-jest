@@ -2,6 +2,81 @@ import React from 'react';
 import { getLayout } from '../../components/layouts/dashboard';
 import BreadCumbs from '../../components/breadcumbs';
 import { PieChart } from '../../components/chart';
+import Table from '../../components/table';
+
+const data :any = [
+  {
+    id: 1,
+    title: 'Beetlejuice',
+    year: '1988',
+  },
+  {
+    id: 2,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 3,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 4,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 5,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 6,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 7,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 8,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 9,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 10,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+  {
+    id: 11,
+    title: 'Ghostbusters',
+    year: '1984',
+  },
+];
+
+const columns: any = [
+  {
+    name: 'Id',
+    selector: (row) => row.id,
+    sortable: true,
+  },
+  {
+    name: 'Title',
+    selector: (row) => row.title,
+  },
+  {
+    name: 'Year',
+    selector: (row) => row.year,
+  },
+];
 
 const Dashboard = () => (
   <div className="flex">
@@ -28,6 +103,12 @@ const Dashboard = () => (
 
           </article>
         </div>
+      </div>
+      <div className="my-24 shadow-md">
+        <Table
+          data={data}
+          columns={columns}
+        />
       </div>
     </div>
   </div>
