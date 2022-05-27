@@ -17,7 +17,7 @@ const AppLayout = ({ children }: any) => {
               aria-hidden
               onClick={() => setIsOpen()}
             >
-              {!getData ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
+              {!getData() ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
             </div>
             <div className="basis-1/3 absolute right-5 top-3 cursor-pointer">
               <div className="relative inline-block">
