@@ -1,8 +1,5 @@
 import React from 'react';
-import DataTable, { TableProps } from 'react-data-table-component';
-import { AiOutlineArrowDown } from 'react-icons/ai';
-
-const sortIcon = <AiOutlineArrowDown />;
+import DataTable from 'react-data-table-component';
 
 const customStyles = {
   rows: {
@@ -24,13 +21,12 @@ const customStyles = {
   },
 };
 
-const MyComponent: React.FC<any> = (props: TableProps<any>) => (
+const MyComponent: React.FC<any> = (props) => (
   <DataTable
     noContextMenu
     customStyles={customStyles}
     pagination
     selectableRows
-    sortIcon={sortIcon}
     dense
     striped
     highlightOnHover
