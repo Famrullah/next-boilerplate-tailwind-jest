@@ -12,7 +12,10 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // eslint-disable-next-line global-require
+    require('@tailwindcss/typography'),
+  ],
   variants: {
     extend: {
       backgroundColor: ['active', 'disabled'],

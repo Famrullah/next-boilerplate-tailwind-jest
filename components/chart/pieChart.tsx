@@ -17,6 +17,7 @@ export const PieChart = () => {
         fontFamily: 'sans-serif',
       },
     },
+    colors: ['#f65314', '#ffec4a', '#1EBBEE', '#006cff', '#66EDA8', '#b20317', '#666'],
     title: {
       text: 'Browser market shares. January, 2018',
     },
@@ -26,7 +27,8 @@ export const PieChart = () => {
     credits: false,
     tooltip: {
       formatter() {
-        const { y, key } = this;
+        const { y, key, series } = this;
+        console.log(series);
         return (
           `<div>
             <h1 style="font-size:11px">${key}</h1><br>
