@@ -4,7 +4,7 @@ export interface INavbar {
   initialState: boolean;
 }
 
-const createFishSlice = (set: SetState<INavbar>, get: GetState<INavbar>) => ({
+const NavbarStore = (set: SetState<INavbar>, get: GetState<INavbar>) => ({
   initialState: true,
   setIsOpen: () => {
     set((prev) => ({ initialState: !prev.initialState }));
@@ -12,4 +12,4 @@ const createFishSlice = (set: SetState<INavbar>, get: GetState<INavbar>) => ({
   getData: () => get().initialState,
 });
 
-export default createFishSlice;
+export default NavbarStore;

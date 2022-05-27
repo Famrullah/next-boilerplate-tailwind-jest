@@ -5,8 +5,7 @@ import Sidebar from '../../sidebar';
 import useStore from '../../../store/useStore';
 
 const AppLayout = ({ children }: any) => {
-  const setIsOpen = useStore((state) => state.setIsOpen);
-  const isOpen = useStore((state) => state.getData());
+  const { getData, setIsOpen } = useStore((state) => state);
   return (
     <div className="flex h-screen overflow-hidden">
       <Sidebar />
@@ -18,7 +17,7 @@ const AppLayout = ({ children }: any) => {
               aria-hidden
               onClick={() => setIsOpen()}
             >
-              {!isOpen ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
+              {!getData ? <AiOutlineMenuUnfold /> : <AiOutlineMenuFold />}
             </div>
             <div className="basis-1/3 absolute right-5 top-3 cursor-pointer">
               <div className="relative inline-block">
