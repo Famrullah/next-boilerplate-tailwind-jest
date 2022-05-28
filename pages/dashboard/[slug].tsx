@@ -1,13 +1,21 @@
 import React from 'react';
-
+import { useQuery } from 'react-query';
 import { getLayout } from '../../components/layouts/dashboard';
 import DashboardContainer from '../../containers/dashboard';
 import { fetchPosts } from '../../services/HomeApi';
 
-const Dashboard = (props) => {
-  console.log(props);
+const Dashboard = (props:any) => {
+  const req = useQuery(
+    'fetchPosts',
+    fetchPosts,
+    {
+      initialData: props,
+      staleTime: 0,
+    },
+  );
+
   return (
-    <DashboardContainer />
+    <DashboardContainer {...req} />
   );
 };
 
