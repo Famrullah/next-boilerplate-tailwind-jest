@@ -78,8 +78,8 @@ const columns: any = [
   },
 ];
 
-const Dashboard = (props:any) => {
-  console.log(props);
+const Dashboard = ({ isFetching }: any) => {
+  if (isFetching) return (<>loading</>);
   return (
     <div className="flex">
       <div className="w-full">
