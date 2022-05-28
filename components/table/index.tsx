@@ -26,19 +26,32 @@ const MyComponent: React.FC<any> = (props) => {
   const formatSetPage = (url: string) => url.split('=')[1];
   console.log(formatSetPage(options.next));
   return (
-    <DataTable
-      noContextMenu
-      customStyles={customStyles}
-      pagination
-      selectableRows
-      dense
-      paginationComponentOptions={paginationComponentOptions}
-      paginationServer
-      paginationTotalRows={options.count}
-      striped
-      highlightOnHover
-      {...props}
-    />
+    <>
+      <div className="grid grid-cols-2 gap-6 mt-10 ">
+        <div>
+          {/*  */}
+        </div>
+        <div className="text-right">
+          {/* <input className="border-2 mb-10" type="text" /> */}
+        </div>
+      </div>
+
+      <div className="shadow-md">
+        <DataTable
+          noContextMenu
+          customStyles={customStyles}
+          pagination
+          selectableRows
+          dense
+          paginationComponentOptions={paginationComponentOptions}
+          paginationServer
+          paginationTotalRows={options.count}
+          striped
+          highlightOnHover
+          {...props}
+        />
+      </div>
+    </>
   );
 };
 

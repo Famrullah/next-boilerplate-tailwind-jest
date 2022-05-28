@@ -33,7 +33,7 @@ const Dashboard = ({ isFetching, data }: any) => {
     },
     {
       name: 'Action',
-      cell: (e) => <button className="bg-green-400 text-white p-2 rounded" onClick={() => handleAction(e)}>Action</button>,
+      cell: (e) => <button className="bg-green-400 text-white py-1 px-2 rounded" onClick={() => handleAction(e)}>Action</button>,
       ignoreRowClick: true,
       allowOverflow: true,
       button: true,
@@ -66,7 +66,7 @@ const Dashboard = ({ isFetching, data }: any) => {
             </article>
           </div>
         </div>
-        <div className="my-24 shadow-md">
+        <div className="my-24">
           <Table
             data={data.results}
             options={data}
