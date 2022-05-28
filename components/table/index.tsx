@@ -34,7 +34,7 @@ const MyComponent: React.FC<any> = (props) => {
       dense
       paginationComponentOptions={paginationComponentOptions}
       paginationServer
-      paginationTotalRows={Math.ceil(options.count / 10)}
+      paginationTotalRows={options.count}
       striped
       highlightOnHover
       {...props}
