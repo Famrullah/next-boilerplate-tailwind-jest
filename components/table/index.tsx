@@ -21,17 +21,20 @@ const customStyles = {
   },
 };
 
-const MyComponent: React.FC<any> = (props) => (
-  <DataTable
-    noContextMenu
-    customStyles={customStyles}
-    pagination
-    selectableRows
-    dense
-    striped
-    highlightOnHover
-    {...props}
-  />
-);
+const MyComponent: React.FC<any> = (props) => {
+  console.log(props);
+  return (
+    <DataTable
+      noContextMenu
+      customStyles={customStyles}
+      pagination
+      selectableRows
+      dense
+      striped
+      highlightOnHover
+      {...props}
+    />
+  );
+};
 
 export default MyComponent;

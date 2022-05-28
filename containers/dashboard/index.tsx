@@ -1,84 +1,41 @@
-import React from 'react';
+/* eslint-disable react/no-unstable-nested-components */
+import React, { useMemo } from 'react';
 import { getLayout } from '../../components/layouts/dashboard';
 import BreadCumbs from '../../components/breadcumbs';
 import { PieChart } from '../../components/chart';
 import Table from '../../components/table';
 
-const data :any = [
-  {
-    id: 1,
-    title: 'Beetlejuice',
-    year: '1988',
-  },
-  {
-    id: 2,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 3,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 4,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 5,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 6,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 7,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 8,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 9,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 10,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-  {
-    id: 11,
-    title: 'Ghostbusters',
-    year: '1984',
-  },
-];
+const Dashboard = ({ isFetching, data }: any) => {
+  const handleAction = (e:any) => {
+    console.log(e);
+  };
 
-const columns: any = [
-  {
-    name: 'Id',
-    selector: (row) => row.id,
-    sortable: true,
-  },
-  {
-    name: 'Title',
-    selector: (row) => row.title,
-  },
-  {
-    name: 'Year',
-    selector: (row) => row.year,
-  },
-];
+  const columns = useMemo(() => [
+    {
+      name: 'Name',
+      selector: (row) => row.name,
+      sortable: true,
+      cell: (e:any) => <span className="text-gray-600 capitalize">{e.name}</span>,
+    },
+    {
+      name: 'Gender',
+      selector: (row) => row.gender,
+      cell: (d) => <span className="text-gray-600 capitalize">{d.gender}</span>,
+    },
+    {
+      name: 'Birth Year',
+      selector: (row) => row.birth_year,
+      cell: (e:any) => <span className="text-gray-600 capitalize">{e.birth_year}</span>,
+    },
+    {
+      name: 'Action',
+      cell: (e) => <button className="bg-green-400 text-white p-2 rounded" onClick={() => handleAction(e)}>Action</button>,
+      ignoreRowClick: true,
+      allowOverflow: true,
+      button: true,
+    },
+  ], []);
 
-const Dashboard = ({ isFetching }: any) => {
   if (isFetching) return (<>loading</>);
   return (
     <div className="flex">
@@ -108,7 +65,7 @@ const Dashboard = ({ isFetching }: any) => {
         </div>
         <div className="my-24 shadow-md">
           <Table
-            data={data}
+            data={data.results}
             columns={columns}
           />
         </div>
