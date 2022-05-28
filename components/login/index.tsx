@@ -15,11 +15,10 @@ const LoginPage:React.FC = () => {
   const {
     register, formState: { errors, isValid }, handleSubmit,
   } = useForm<FormInputs>({ mode: 'onChange' });
-  const goDashBoard = (data) => {
-    console.log(data);
+  const goDashBoard = () => {
     router.push('/dashboard');
   };
-  const onSubmit = (data: FormInputs) => goDashBoard(data);
+  const onSubmit = () => goDashBoard();
 
   return (
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

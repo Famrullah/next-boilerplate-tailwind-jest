@@ -2,6 +2,7 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './containers/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -18,6 +19,7 @@ module.exports = {
   ],
   variants: {
     extend: {
+      typography: ['dark'],
       backgroundColor: ['active', 'disabled'],
       colors: {
         mineshaft30: '#989898',

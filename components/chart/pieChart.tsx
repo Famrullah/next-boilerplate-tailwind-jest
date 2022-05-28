@@ -32,8 +32,7 @@ export const PieChart = () => {
     credits: false,
     tooltip: {
       formatter() {
-        const { y, key, series } = this;
-        console.log(series);
+        const { y, key } = this;
         return (
           `<div>
             <h1 style="font-size:11px">${key}</h1><br>

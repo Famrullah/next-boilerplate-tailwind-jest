@@ -1,11 +1,7 @@
 import React from 'react';
-import { IPosts } from '../../interfaces/postsInterfaces';
 
-const HomeContainer = (props:IPosts) => {
-  console.log(props);
-  return (
-    <>helloss</>
-  );
-};
+const HomeContainer = () => (
+  <>helloss</>
+);
 
 export default HomeContainer;

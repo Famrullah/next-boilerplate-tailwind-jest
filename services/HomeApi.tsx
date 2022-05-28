@@ -1,8 +1,8 @@
-import axios from './api';
+import { api } from './api';
 import { IPosts } from '../interfaces/postsInterfaces';
 
-export const fetchPosts = async (): Promise<IPosts[]> => {
-  const req = await axios.get('/posts');
-  const res = await req.data;
-  return res;
+export const fetchPosts = async (): Promise<IPosts> => {
+  const req = await api.get('/people');
+
+  return req.data;
 };
