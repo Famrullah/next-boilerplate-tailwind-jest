@@ -6,6 +6,10 @@ import { PieChart } from '../../components/chart';
 import Table from '../../components/table';
 
 const Dashboard = ({ isFetching, data }: any) => {
+  const options = {
+    noRowsPerPage: true,
+  };
+
   const handleAction = (e:any) => {
     console.log(e);
   };
@@ -35,7 +39,6 @@ const Dashboard = ({ isFetching, data }: any) => {
       button: true,
     },
   ], []);
-
   if (isFetching) return (<>loading</>);
   return (
     <div className="flex">
@@ -66,7 +69,9 @@ const Dashboard = ({ isFetching, data }: any) => {
         <div className="my-24 shadow-md">
           <Table
             data={data.results}
+            options={data}
             columns={columns}
+            paginationComponentOptions={options}
           />
         </div>
       </div>

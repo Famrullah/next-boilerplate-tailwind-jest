@@ -22,7 +22,9 @@ const customStyles = {
 };
 
 const MyComponent: React.FC<any> = (props) => {
-  console.log(props);
+  const { paginationComponentOptions, options } = props;
+  const formatSetPage = (url: string) => url.split('=')[1];
+  console.log(formatSetPage(options.next));
   return (
     <DataTable
       noContextMenu
@@ -30,6 +32,9 @@ const MyComponent: React.FC<any> = (props) => {
       pagination
       selectableRows
       dense
+      paginationComponentOptions={paginationComponentOptions}
+      paginationServer
+      paginationTotalRows={options.count}
       striped
       highlightOnHover
       {...props}
