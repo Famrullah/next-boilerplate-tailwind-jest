@@ -32,7 +32,7 @@ const MyComponent: React.FC<any> = (props) => (
       </div>
     </div>
 
-    <div className="shadow-md">
+    <div className="shadow-md relative">
       <DataTable
         noContextMenu
         customStyles={customStyles}
@@ -42,6 +42,7 @@ const MyComponent: React.FC<any> = (props) => (
         paginationServer
         striped
         highlightOnHover
+        noDataComponent
         {...props}
       />
     </div>

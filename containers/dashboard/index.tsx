@@ -8,11 +8,9 @@ import Table from '../../components/table';
 import { fetchPeopleSlug } from '../../services/peopleApi';
 
 const Dashboard = () => {
-  const [pages, setPages] = useState <number>(1);
-  const [loading, setLoading] = useState<boolean>(true);
   const [peopleData, setPeopleData] = useState<any>([]);
   const [totalRow, setTotalRow] = useState<number>(1);
-  const { data, isLoading } = useQuery('users', () => fetchPeopleSlug(pages));
+  const { data } = useQuery('users', () => fetchPeopleSlug(1));
 
   const options = {
     noRowsPerPage: true,
@@ -21,7 +19,6 @@ const Dashboard = () => {
   useEffect(() => {
     if (data) {
       setPeopleData(data.results);
-      setLoading(isLoading);
       setTotalRow(data.count);
     }
   }, [data]);
@@ -31,9 +28,12 @@ const Dashboard = () => {
   };
 
   const handlePageChange = async (page) => {
-    const req = await fetchPeopleSlug(page);
-    setPages(page);
-    setPeopleData(req.results);
+    try {
+      const req = await fetchPeopleSlug(page);
+      setPeopleData(req.results);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const columns = useMemo(() => [
@@ -93,9 +93,10 @@ const Dashboard = () => {
             data={peopleData}
             paginationTotalRows={totalRow}
             columns={columns}
-            progressPending={loading}
             onChangePage={handlePageChange}
             paginationComponentOptions={options}
+            fixedHeader
+            persistTableHead
           />
         </div>
       </div>
