@@ -1,17 +1,39 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
 import { getLayout } from '../../components/layouts/dashboard';
 import BreadCumbs from '../../components/breadcumbs';
 import { PieChart } from '../../components/chart';
 import Table from '../../components/table';
+import { fetchPeopleSlug } from '../../services/peopleApi';
 
-const Dashboard = ({ isFetching, data }: any) => {
+const Dashboard = () => {
+  const [pages, setPages] = useState <number>(1);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [peopleData, setPeopleData] = useState<any>([]);
+  const [totalRow, setTotalRow] = useState<number>(1);
+  const { data, isLoading } = useQuery('users', () => fetchPeopleSlug(pages));
+
   const options = {
     noRowsPerPage: true,
   };
 
+  useEffect(() => {
+    if (data) {
+      setPeopleData(data.results);
+      setLoading(isLoading);
+      setTotalRow(data.count);
+    }
+  }, [data]);
+
   const handleAction = (e:any) => {
     console.log(e);
+  };
+
+  const handlePageChange = async (page) => {
+    const req = await fetchPeopleSlug(page);
+    setPages(page);
+    setPeopleData(req.results);
   };
 
   const columns = useMemo(() => [
@@ -39,7 +61,7 @@ const Dashboard = ({ isFetching, data }: any) => {
       button: true,
     },
   ], []);
-  if (isFetching) return (<>loading</>);
+
   return (
     <div className="flex">
       <div className="w-full">
@@ -68,9 +90,11 @@ const Dashboard = ({ isFetching, data }: any) => {
         </div>
         <div className="my-24">
           <Table
-            data={data.results}
-            options={data}
+            data={peopleData}
+            paginationTotalRows={totalRow}
             columns={columns}
+            progressPending={loading}
+            onChangePage={handlePageChange}
             paginationComponentOptions={options}
           />
         </div>

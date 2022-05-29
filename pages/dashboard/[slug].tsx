@@ -2,12 +2,12 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import { getLayout } from '../../components/layouts/dashboard';
 import DashboardContainer from '../../containers/dashboard';
-import { fetchPosts } from '../../services/HomeApi';
+import { fetchPeople } from '../../services/peopleApi';
 
 const Dashboard = (props:any) => {
   const req = useQuery(
-    'fetchPosts',
-    fetchPosts,
+    'fetchPeople',
+    fetchPeople,
     {
       initialData: props,
       staleTime: 0,
@@ -20,7 +20,7 @@ const Dashboard = (props:any) => {
 };
 
 export const getServerSideProps = async () => {
-  const data = await fetchPosts();
+  const data = await fetchPeople();
   return {
     props: {
       query: data,
