@@ -1,11 +1,10 @@
 import React from 'react';
-import BreadCumbs from '../../../components/breadcumbs';
+import KprContainer from '../../../containers/pinjaman/kpr';
 import { getLayout } from '../../../components/layouts/dashboard';
 
 const Kpr = () => (
   <div>
-    <BreadCumbs />
-    KPR
+    <KprContainer />
   </div>
 );
 

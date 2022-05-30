@@ -2,7 +2,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { BarLoader } from 'react-spinners';
-import { getLayout } from '../../components/layouts/dashboard';
 import BreadCumbs from '../../components/breadcumbs';
 import { PieChart } from '../../components/chart';
 import Table from '../../components/table';
@@ -21,7 +20,6 @@ const Dashboard = () => {
   useEffect(() => {
     if (data) {
       setPeopleData(data.results);
-      // setPeopleData((prevData) => ({ ...prevData, ...data.results }));
       setTotalRow(data.count);
       setLoading(isLoading);
     }
@@ -112,5 +110,5 @@ const Dashboard = () => {
     </div>
   );
 };
-Dashboard.getLayout = getLayout;
+
 export default Dashboard;
