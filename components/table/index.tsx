@@ -23,12 +23,12 @@ const customStyles = {
 
 const MyComponent: React.FC<any> = (props) => (
   <>
-    <div className="grid grid-cols-2 gap-6 mt-10 ">
+    <div className="grid grid-cols-2 gap-6 mb-2 py-2">
       <div>
         {/*  */}
       </div>
       <div className="text-right">
-        {/* <input className="border-2 mb-10" type="text" /> */}
+        {/*  */}
       </div>
     </div>
 
@@ -37,7 +37,6 @@ const MyComponent: React.FC<any> = (props) => (
         noContextMenu
         customStyles={customStyles}
         pagination
-        selectableRows
         dense
         paginationServer
         striped

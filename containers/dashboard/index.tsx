@@ -55,7 +55,7 @@ const Dashboard = () => {
     },
     {
       name: 'Action',
-      cell: (e) => <button className="bg-green-400 text-white py-1 px-2 rounded" onClick={() => handleAction(e)}>Action</button>,
+      cell: (e) => <button className="bg-green-400 text-white py-1 px-2 rounded" onClick={() => handleAction(e)}>Details</button>,
       ignoreRowClick: true,
       allowOverflow: true,
       button: true,

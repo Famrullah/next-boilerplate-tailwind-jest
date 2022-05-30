@@ -30,6 +30,13 @@ export const Menus: ISidenav[] = [
         title: 'pinjaman',
         link: '/pinjaman',
         icon: AiFillBank,
+        children: [
+          {
+            title: 'KPR',
+            link: '/pinjaman/kpr',
+            icon: AiFillBank,
+          },
+        ],
       },
       {
         title: 'Pembukaan Rekening',
