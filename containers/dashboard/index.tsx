@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React, { useMemo, useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
+import { BarLoader } from 'react-spinners';
 import { getLayout } from '../../components/layouts/dashboard';
 import BreadCumbs from '../../components/breadcumbs';
 import { PieChart } from '../../components/chart';
@@ -8,9 +9,10 @@ import Table from '../../components/table';
 import { fetchPeopleSlug } from '../../services/peopleApi';
 
 const Dashboard = () => {
+  const { data, isLoading } = useQuery('users', () => fetchPeopleSlug(1));
   const [peopleData, setPeopleData] = useState<any>([]);
   const [totalRow, setTotalRow] = useState<number>(1);
-  const { data } = useQuery('users', () => fetchPeopleSlug(1));
+  const [loading, setLoading] = useState<boolean>(true);
 
   const options = {
     noRowsPerPage: true,
@@ -19,7 +21,9 @@ const Dashboard = () => {
   useEffect(() => {
     if (data) {
       setPeopleData(data.results);
+      // setPeopleData((prevData) => ({ ...prevData, ...data.results }));
       setTotalRow(data.count);
+      setLoading(isLoading);
     }
   }, [data]);
 
@@ -29,10 +33,13 @@ const Dashboard = () => {
 
   const handlePageChange = async (page) => {
     try {
+      setLoading(true);
       const req = await fetchPeopleSlug(page);
       setPeopleData(req.results);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -97,6 +104,8 @@ const Dashboard = () => {
             paginationComponentOptions={options}
             fixedHeader
             persistTableHead
+            progressPending={loading}
+            progressComponent={<BarLoader width="100%" color="#71c4bc" />}
           />
         </div>
       </div>
