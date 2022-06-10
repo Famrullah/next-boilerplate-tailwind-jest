@@ -5,7 +5,7 @@ import { BarLoader } from 'react-spinners';
 import BreadCumbs from '../../components/breadcumbs';
 import { PieChart } from '../../components/chart';
 import Table from '../../components/table';
-import { fetchPeopleSlug } from '../../services/peopleApi';
+import { fetchPeopleSlug } from '../../../services/peopleApi';
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery('users', () => fetchPeopleSlug(1));

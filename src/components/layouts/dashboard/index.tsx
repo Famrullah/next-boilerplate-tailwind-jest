@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from 'react-icons/ai';
 import Sidebar from '../../sidebar';
-import useStore from '../../../store/useStore';
+import useStore from '../../../../store/useStore';
 
 const AppLayout = ({ children }: any) => {
   const { getData, setIsOpen } = useStore((state) => state);

@@ -1,6 +1,6 @@
 import React from 'react';
-import KtaContainer from '../../../containers/pinjaman/kta';
-import { getLayout } from '../../../components/layouts/dashboard';
+import KtaContainer from '../../../src/containers/pinjaman/kta';
+import { getLayout } from '../../../src/components/layouts/dashboard';
 
 const Kta = () => (
   <div>

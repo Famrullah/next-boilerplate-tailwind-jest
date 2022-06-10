@@ -1,6 +1,6 @@
 import React from 'react';
-import KprContainer from '../../../containers/pinjaman/kpr';
-import { getLayout } from '../../../components/layouts/dashboard';
+import KprContainer from '../../../src/containers/pinjaman/kpr';
+import { getLayout } from '../../../src/components/layouts/dashboard';
 
 const Kpr = () => (
   <div>

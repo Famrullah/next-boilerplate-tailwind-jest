@@ -1,6 +1,6 @@
 import React from 'react';
-import { getLayout } from '../components/layouts/blog';
-import LoginPage from '../components/login';
+import { getLayout } from '../src/components/layouts/blog';
+import LoginPage from '../src/components/login';
 
 const LandingPage = () => (
   <div className="flex">
