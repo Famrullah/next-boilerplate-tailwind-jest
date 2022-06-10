@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { getLayout } from '../../src/components/layouts/dashboard';
-import BreadCumbs from '../../src/components/breadcumbs';
+import { getLayout } from '@/components/layouts/dashboard';
+import BreadCumbs from '@/components/breadcumbs';
 
 const Dashboard = () => (
   <div className="flex">

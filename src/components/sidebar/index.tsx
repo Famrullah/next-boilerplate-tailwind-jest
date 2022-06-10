@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import Image from 'next/image';
+import useStore from '@/store/useStore';
 import { Menus } from '../../../utils/constants/menu';
 import MenusComponent from './parts/menu';
-import useStore from '../../../store/useStore';
 
 const Sidebar = () => {
   const isOpen = useStore((state) => state.getData());
