@@ -6,6 +6,7 @@
       "@/containers/*": ["./src/containers/*"],
       "@/store/*": ["./store/*"],
       "@/services/*": ["./services/*"],
+      "@/*": ["./*"],
     },
     "target": "es6",
     "module": "commonjs",

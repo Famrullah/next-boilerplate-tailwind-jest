@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import useStore from '@/store/useStore';
-import { Menus } from '../../../utils/constants/menu';
+import { Menus } from '@/utils/constants/menu';
 import MenusComponent from './parts/menu';
 
 const Sidebar = () => {

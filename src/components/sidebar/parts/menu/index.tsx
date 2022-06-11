@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineArrowDown } from 'react-icons/ai';
-import { isEmpty } from '../../../../../utils/isEmpty';
+import { isEmpty } from '@/utils/isEmpty';
 
 interface IProps {
   menu:any,
