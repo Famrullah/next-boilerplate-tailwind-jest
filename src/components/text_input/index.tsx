@@ -1,32 +1,21 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { ErrorMessage } from '@hookform/error-message';
+import * as React from 'react';
+import { useController, UseControllerProps } from 'react-hook-form';
+// import { ErrorMessage } from '@hookform/error-message';
 
-interface FormInputs {
-    email: string,
-}
+type FormValues = {
+  FirstName: string;
+};
 
-const TextInput = () => {
-  const { register, formState: { errors }, handleSubmit } = useForm<FormInputs>();
-  const onSubmit = (data: FormInputs) => console.log(data);
+const Input = (props: UseControllerProps<FormValues>) => {
+  const { name } = props;
+  const { field } = useController(props);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        className="mb-5 appearance-none rounded relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-stone-500 focus:border-stone-500 focus:z-10 sm:text-sm"
-        {...register(
-          'email',
-          { required: 'wajib di isi' },
-        )}
-      />
-
-      <ErrorMessage
-        errors={errors}
-        name="email"
-        render={({ message }) => <p className="text-red-600">{message}</p>}
-      />
-      <input type="submit" />
-    </form>
+    <input
+      {...field}
+      placeholder={name}
+      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    />
   );
 };
 
-export default TextInput;
+export default Input;

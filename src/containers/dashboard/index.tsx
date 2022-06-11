@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-unstable-nested-components */
 import React, { useMemo, useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
@@ -6,6 +8,12 @@ import { fetchPeopleSlug } from '@/services/peopleApi';
 import BreadCumbs from '@/components/breadcumbs';
 import { PieChart } from '@/components/chart';
 import Table from '@/components/table';
+import { useForm } from 'react-hook-form';
+import Input from '@/components/text_input';
+
+type FormValues = {
+  FirstName: string;
+};
 
 const Dashboard = () => {
   const { data, isLoading } = useQuery('users', () => fetchPeopleSlug(1));
@@ -15,6 +23,13 @@ const Dashboard = () => {
   const options = {
     noRowsPerPage: true,
   };
+  const { handleSubmit, control } = useForm<FormValues>({
+    defaultValues: {
+      FirstName: '',
+    },
+    mode: 'onChange',
+  });
+  const onSubmit = (value: FormValues) => console.log(value);
 
   useEffect(() => {
     if (data) {
@@ -93,6 +108,18 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="my-24">
+          <div className="flex justify-end">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex items-center">
+              <label className="sr-only">Search</label>
+              <div className="relative w-full">
+                <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                  <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" /></svg>
+                </div>
+                <Input control={control} name="FirstName" rules={{ required: true }} />
+              </div>
+              <button type="submit" className="p-2.5 ml-2 text-sm font-medium text-white bg-blue-400 rounded-lg border border-blue-400 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-400 dark:focus:ring-blue-800"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></button>
+            </form>
+          </div>
           <Table
             data={peopleData}
             paginationTotalRows={totalRow}
