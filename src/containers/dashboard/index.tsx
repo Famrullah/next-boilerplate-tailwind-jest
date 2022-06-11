@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React, { useMemo, useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
-import { BarLoader } from 'react-spinners';
+
 import { fetchPeopleSlug } from '@/services/peopleApi';
 import BreadCumbs from '@/components/breadcumbs';
 import { PieChart } from '@/components/chart';
@@ -12,7 +12,6 @@ const Dashboard = () => {
   const [peopleData, setPeopleData] = useState<any>([]);
   const [totalRow, setTotalRow] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(true);
-
   const options = {
     noRowsPerPage: true,
   };
@@ -101,9 +100,8 @@ const Dashboard = () => {
             onChangePage={handlePageChange}
             paginationComponentOptions={options}
             fixedHeader
+            loading={loading}
             persistTableHead
-            progressPending={loading}
-            progressComponent={<BarLoader width="100%" color="#71c4bc" />}
           />
         </div>
       </div>

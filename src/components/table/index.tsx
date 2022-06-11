@@ -1,5 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import { BarLoader } from 'react-spinners';
 
 const customStyles = {
   rows: {
@@ -33,6 +35,11 @@ const MyComponent: React.FC<any> = (props) => (
     </div>
 
     <div className="shadow-md relative">
+      {props.loading && (
+        <div className="relative top-12 z-10">
+          <BarLoader width="100%" color="#71c4bc" css="display:block" />
+        </div>
+      )}
       <DataTable
         noContextMenu
         customStyles={customStyles}
