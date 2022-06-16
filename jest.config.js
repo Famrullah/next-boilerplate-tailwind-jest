@@ -12,6 +12,7 @@ module.exports = {
 
     // Handle CSS imports (without CSS modules)
     '^.+\\.(css|sass|scss)$': '<rootDir>/__mocks__/stylemock.js',
+    '^@/components(.*)$': '<rootDir>/src/components$1',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
