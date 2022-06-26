@@ -3,7 +3,8 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React, { useMemo, useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { fetchPeopleSlug, searchPeople } from '@/services/peopleApi';
 import BreadCumbs from '@/components/breadcumbs';
 import { PieChart } from '@/components/chart';
@@ -100,6 +101,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex">
+      <ToastContainer />
       <div className="w-full">
         <h1 className="font-medium tracking-wide leading-tight text-xl mt-0 mb-2 text-gray-600">Dashboard</h1>
         <BreadCumbs />
