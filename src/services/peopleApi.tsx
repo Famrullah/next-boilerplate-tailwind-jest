@@ -10,10 +10,10 @@ export const searchPeople = async (query:string): Promise<any> => {
 // eslint-disable-next-line consistent-return
 export const fetchPeopleSlug = async (query:string | number): Promise<any> => {
   try {
-    const req = await api.get(`/people/?page=${query}`);
+    const req = await api.get(`/peoples/?page=${query}`);
     return req.data;
   } catch (err) {
-    toast.error('No Data', {
+    toast.error(err.message, {
       position: 'bottom-right',
       theme: 'colored',
       autoClose: 5000,
