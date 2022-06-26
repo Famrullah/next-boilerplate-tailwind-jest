@@ -11,12 +11,14 @@ import { PieChart } from '@/components/chart';
 import Table from '@/components/table';
 import { useForm, useWatch } from 'react-hook-form';
 import Input from '@/components/text_input';
+import { useRouter } from 'next/router';
 
 type FormValues = {
   FirstName: string;
 };
 
 const Dashboard = () => {
+  const router = useRouter();
   const { data, isLoading } = useQuery('users', () => fetchPeopleSlug(1));
   const [peopleData, setPeopleData] = useState<any>([]);
   const [totalRow, setTotalRow] = useState<number>(1);
@@ -58,7 +60,13 @@ const Dashboard = () => {
   }, [getFirstName]);
 
   const handleAction = (e:any) => {
-    console.log(e);
+    const name = e.name.replace(/\s/g, '').toLowerCase();
+    router.push({
+      pathname: `/people/${name}`,
+      query: {
+        url: e.url,
+      },
+    });
   };
 
   const handlePageChange = async (page) => {
