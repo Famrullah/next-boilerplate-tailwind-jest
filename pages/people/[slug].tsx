@@ -1,6 +1,7 @@
 import React from 'react';
 import { getLayout } from '@/components/layouts/dashboard';
 import axios from 'axios';
+import BreadCumbs from '@/components/breadcumbs';
 
 // eslint-disable-next-line consistent-return
 const fetchPeopleSlug = async (url: string) => {
@@ -18,6 +19,7 @@ const People = (query: any) => {
   const { name } = data.people;
   return (
     <div className="">
+      <BreadCumbs />
       {name}
     </div>
   );

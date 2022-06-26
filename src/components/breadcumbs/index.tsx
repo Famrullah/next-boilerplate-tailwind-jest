@@ -5,7 +5,12 @@ import Link from 'next/link';
 
 const BreadCumbs: React.FC = () => {
   const router = useRouter();
-  const linkPath = router.asPath.split('/');
+  const linkPath: any = router.asPath.split('/');
+  const removeQueryParams = linkPath[linkPath.length - 1].split('?');
+  if (removeQueryParams[1]) {
+    // eslint-disable-next-line prefer-destructuring
+    linkPath[linkPath.length - 1] = removeQueryParams[0];
+  }
   linkPath.shift();
   const pathArray = linkPath.map((path, i) => ({ breadcrumb: path, href: `/${linkPath.slice(0, i + 1).join('/')}` }));
   return (
