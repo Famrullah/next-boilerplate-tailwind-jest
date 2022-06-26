@@ -1,8 +1,8 @@
 import { api } from './api';
-import { IPosts } from '../interfaces/postsInterfaces';
+// import { IPosts } from '../interfaces/postsInterfaces';
 
-export const fetchPeople = async (): Promise<IPosts> => {
-  const req = await api.get('/people');
+export const searchPeople = async (query:string): Promise<any> => {
+  const req = await api.get(`/people/?search=${query}`);
   return req.data;
 };
 
