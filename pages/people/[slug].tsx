@@ -27,8 +27,8 @@ const People = (query: any) => {
   const queryData = query.data;
   const { name, films } = queryData.people;
   const { data, isLoading } = useQuery('users', () => getAllData(films));
+  if(isLoading) return 'loading'
   console.log(data)
-
   return (
     <div className="">
       <div className="flex">
