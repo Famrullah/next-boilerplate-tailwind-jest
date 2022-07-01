@@ -17,8 +17,8 @@ const fetchData = async (url: string) => {
 
 const getAllData = async (films : any) => {
   return Promise.all(films.map(async (url) => {
-    const resp = await axios.get(url);
-    return resp;
+    const {data} = await axios.get(url);
+    return data;
   }));
 };
 
