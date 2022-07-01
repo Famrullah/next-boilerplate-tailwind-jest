@@ -2,9 +2,10 @@ import React from 'react';
 import { getLayout } from '@/components/layouts/dashboard';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import { useQuery } from 'react-query';
 
 // eslint-disable-next-line consistent-return
-const fetchPeopleSlug = async (url: string) => {
+const fetchData = async (url: string) => {
   try {
     const req = await axios.get(url);
     const res = await req.data;
@@ -14,10 +15,20 @@ const fetchPeopleSlug = async (url: string) => {
   }
 };
 
+const getAllData = async (films : any) => {
+  return Promise.all(films.map(async (url) => {
+    const resp = await axios.get(url);
+    return resp;
+  }));
+};
+
 const People = (query: any) => {
   const router = useRouter();
-  const { data } = query;
-  const { name } = data.people;
+  const queryData = query.data;
+  const { name, films } = queryData.people;
+  const { data, isLoading } = useQuery('users', () => getAllData(films));
+  console.log(data)
+
   return (
     <div className="">
       <div className="flex">
@@ -34,7 +45,7 @@ const People = (query: any) => {
 
 export async function getServerSideProps(ctx) {
   const { url } = ctx.query;
-  const people = await fetchPeopleSlug(url);
+  const people = await fetchData(url);
   return {
     props: {
       data: {

@@ -22,6 +22,7 @@
         "jest"
     ],
     "rules": {
+        "react/destructuring-assignment": ["<enabled>", "never"],
         "no-return-assign": "off",
         "react/button-has-type": "off",
         "no-param-reassign": [2, { "props": false }],
