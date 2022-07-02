@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 const PeopleContainer = (query: any) => {
   const router = useRouter();
   const {name, data , isLoading} = query.data
+  console.log(data)
   return (
     <div className="">
       <div className="flex">

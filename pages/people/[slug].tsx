@@ -3,7 +3,6 @@ import { getLayout } from '@/components/layouts/dashboard';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import PeopleContainer from '@/containers/people';
-import { SkewLoaderComponent } from '@/components/loader/skewLoader';
 
 const styles = {
   height:'100vh'
@@ -37,7 +36,6 @@ const People = (query: any) => {
     isLoading
   }
 
-  if(isLoading) return <SkewLoaderComponent/>
   return (
     <PeopleContainer data={props}/>
   );
