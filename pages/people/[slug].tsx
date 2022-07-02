@@ -3,6 +3,11 @@ import { getLayout } from '@/components/layouts/dashboard';
 import axios from 'axios';
 import { useQuery } from 'react-query';
 import PeopleContainer from '@/containers/people';
+import { SkewLoaderComponent } from '@/components/loader/skewLoader';
+
+const styles = {
+  height:'100vh'
+}
 
 // eslint-disable-next-line consistent-return
 const fetchData = async (url: string) => {
@@ -32,7 +37,7 @@ const People = (query: any) => {
     isLoading
   }
 
-  if(isLoading) return 'loading'
+  if(isLoading) return <SkewLoaderComponent/>
   return (
     <PeopleContainer data={props}/>
   );
